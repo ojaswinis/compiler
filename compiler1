@@ -1,0 +1,12 @@
+LETTER [a-zA-Z]
+DIGIT [0-9]
+%%
+begin {printf("Recognized KeyWORD:%s\n",yytext);}
+if {printf("Recognized KeyWORD:%s\n",yytext);}
+{LETTER}({LETTER}|{DIGIT})* {
+printf("recognized ID: %s\n",yytext);}
+%%
+main()
+{
+yylex();
+}
